@@ -1,0 +1,42 @@
+Tests output
+
+Adelie Pearson correlation test
+	Pearson's product-moment correlation
+
+data:  adelie_subset_data$culmen_length_mm and adelie_subset_data$flipper_length_mm
+t = 4.2275, df = 144, p-value = 4.178e-05
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1795153 0.4693861
+sample estimates:
+     cor 
+0.332274 
+
+
+
+Chinstrap Pearson correlation test
+	Pearson's product-moment correlation
+
+data:  chinstrap_subset_data$culmen_length_mm and chinstrap_subset_data$flipper_length_mm
+t = 4.3449, df = 66, p-value = 4.916e-05
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.2627236 0.6382640
+sample estimates:
+      cor 
+0.4716073 
+
+
+
+Gentoo Pearson correlation test
+	Pearson's product-moment correlation
+
+data:  gentoo_subset_data$culmen_length_mm and gentoo_subset_data$flipper_length_mm
+t = 9.6107, df = 117, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.5499595 0.7540510
+sample estimates:
+      cor 
+0.6642052 
+
