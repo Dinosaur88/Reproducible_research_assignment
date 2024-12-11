@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Y3 Reproducible figures assignment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Y3 MT Reproducible figures assignment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Y3 MT Reproducible figures assignment_files/libs/quarto-html/quarto.js"></script>
+<script src="Y3 MT Reproducible figures assignment_files/libs/quarto-html/popper.min.js"></script>
+<script src="Y3 MT Reproducible figures assignment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Y3 MT Reproducible figures assignment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Y3 MT Reproducible figures assignment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Y3 MT Reproducible figures assignment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Y3 MT Reproducible figures assignment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Y3 MT Reproducible figures assignment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Y3 MT Reproducible figures assignment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Y3 Reproducible figures assignment</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="question-1-data-visualisation-for-science-communication" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-data-visualisation-for-science-communication">Question 1: Data visualisation for science communication</h2>
+<section id="question-1a-bad-figure" class="level4">
+<h4 class="anchored" data-anchor-id="question-1a-bad-figure">Question 1a: Bad figure</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="question-1b-write-about-how-your-design-choices-mislead-the-reader-about-the-underlying-datas." class="level4">
+<h4 class="anchored" data-anchor-id="question-1b-write-about-how-your-design-choices-mislead-the-reader-about-the-underlying-datas.">Question 1b: Write about how your design choices mislead the reader about the underlying datas.</h4>
+<p>There are 4 main ways that my design choice mislead the reader about the data.</p>
+<p>Firstly, the data points aren’t <strong>jittered</strong> which means that it’s difficult to visualise the density of the data points which is an important aspect of a violin plot which shows the density of culmen depth in this case for each species (Wicklin, 2011; Carron 2021).</p>
+<p>Furthermore, the data points are <strong>opaque</strong> and linked to this, the <strong>size</strong> of the data points is quite big so this leads to <strong>overplotting</strong> where data points overlap, making it difficult to view individual data points and understand the actual distribution of culmen depth values for each species especially in the Gentoo species (Bock, 2018).</p>
+<p>Moreover, the <strong>colour</strong> of the violin plot itself is white which matches the background of the graph, making it difficult to easily estimate the most frequent culmen depth value for each species.</p>
+</section>
+</section>
+<section id="question-2-data-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-data-pipeline">Question 2: Data pipeline</h2>
+<section id="data-preparation-steps" class="level4">
+<h4 class="anchored" data-anchor-id="data-preparation-steps">Data preparation steps</h4>
+<p>Step 1: <strong>Load data</strong> - Load in the relevant packages and palmer penguin data set and save the raw data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Load relevant libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ragg)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(svglite)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#This is the folder and R files where I've stored my functions for Q2.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"functions"</span>, <span class="st">"cleaning.R"</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"functions"</span>, <span class="st">"plotting.R"</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualise raw data and save it </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(penguins_raw, <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"penguins_raw.csv"</span>))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Step 2</strong>: Appropriately <strong>clean data</strong> - Cleaning function (“Cleaning_data”) is used to clean data by removing unnecessary columns as well as clean them (i.e removing empty rows/columns) and shortens the species names. Cleaned data using a function, because it allows for flexibility. We then save the cleaned version of the data. We save a raw version and clean version of the data, so all the changes are tracked and prevent us from changing the data directly with is not reproducible.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create clean data set using function</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>penguins_clean <span class="ot">&lt;-</span> <span class="fu">cleaning_data</span>(penguins_raw)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#saves clean data</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(penguins_clean, <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"penguins_clean.csv"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Provides output detail of what the funct does</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Removed empty rows, columns, cleaned column names, removed delta and comments columns, shortened species names"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#view clean data</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>penguins_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="q2-data-analysis---culmen-length-and-flipper-length" class="level4">
+<h4 class="anchored" data-anchor-id="q2-data-analysis---culmen-length-and-flipper-length">Q2: Data analysis - culmen length and flipper length</h4>
+<p><strong>Introduction</strong>: I am looking to see if there is a relationship between culmen length and flipper length for each of the 3 species of penguin.</p>
+<p><strong>Null hypothesis</strong>: There is no statistically significant relationship between culmen length and flipper length for each of the three species.</p>
+<p><strong>Alternative hypothesis</strong>: There is a statistically significant relationship between culmen length and flipper length for each of the three species.</p>
+<p><strong>Exploratory figure</strong> of culmen and flipper lengths for each species using function ‘plot_scatterplot’:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"functions"</span>,<span class="st">"plotting.R"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Creates scaterplot using function from file above</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>flipper_culmen_scatterplot <span class="ot">&lt;-</span> <span class="fu">plot_scatterplot</span>(penguins_clean, culmen_length_mm, flipper_length_mm,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Culmen length (mm)"</span>, <span class="st">"Flipper length (mm)"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>flipper_culmen_scatterplot      </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These scatterplots show that the relationship between culmen length and flipper length is roughly linear for all three species, even though there is some noise in the data.</p>
+<p><strong>Save the explanatory figure</strong> as a PNG within the ‘figures’ subfolder:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">agg_png</span>(<span class="st">"figures/penguin_scatterplot_default.png"</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">20</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="dv">20</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">units =</span> <span class="st">"cm"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">res =</span> <span class="dv">300</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">scaling =</span> <span class="dv">1</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(flipper_culmen_scatterplot)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Statistical methods and printing results figure</strong>: Pearson’s correlation coefficient</p>
+<p>I chose Pearson’s correlation coefficient because I want to see if there’s a statistically significant relationship between two continuous variables (flipper length vs culmen length) for each of the 3 species.</p>
+<p>To calculate the Pearson coefficient, I first need to subset the data for the variables we’re interested in (culmen and flipper lengths) and first test whether the data for each species fits the assumptions of the Pearson Correlation Coefficient.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Subset penguin clean data according to species for the variables we're interested in - flipper/culmen length using function spp_subset_data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"functions"</span>,<span class="st">"testing.R"</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Adelie subset data</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>adelie_subset_data <span class="ot">&lt;-</span> <span class="fu">spp_subset_data</span>(penguins_clean, <span class="st">"Adelie"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Chinstrap subset data</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>chinstrap_subset_data <span class="ot">&lt;-</span> <span class="fu">spp_subset_data</span>(penguins_clean, <span class="st">"Chinstrap"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Gentoo subset culmen and flipper data</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>gentoo_subset_data <span class="ot">&lt;-</span> <span class="fu">spp_subset_data</span>(penguins_clean, <span class="st">"Gentoo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Above I showed that the data for each species follows the assumption of linearity based on the scatterplots.</p>
+<p>The data also fulfills the assumption that the two variables are continuous.</p>
+<p>Below I test for the other assumptions of the Pearson correlation test - normality, homoscedasticity, the presence of spurious outliers</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  adelie_subset_data$culmen_length_mm
+W = 0.99289, p-value = 0.6848</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  adelie_subset_data$flipper_length_mm
+W = 0.9934, p-value = 0.7427</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  chinstrap_subset_data$culmen_length_mm
+W = 0.97525, p-value = 0.1941</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  chinstrap_subset_data$flipper_length_mm
+W = 0.98891, p-value = 0.8106</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  gentoo_subset_data$culmen_length_mm
+W = 0.97379, p-value = 0.01989</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  gentoo_subset_data$flipper_length_mm
+W = 0.96148, p-value = 0.00176</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Y3-MT-Reproducible-figures-assignment_files/figure-html/unnamed-chunk-7-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By testing for the assumptions of the pearson correlation test, the Adelie data fits normality as it has the QQ-plots follow a roughly 45 degree angle along the line. This is supported by the p-value of the Shapiro-Wilks test results for culmen length and flipper length (0.68 and 0.74, respectively). There’s also random scattering of the residuals on the residuals vs fitted values graph suggesting homoscedasticity. Although there are two outliers in the flipper data for the Adelie species (172mm, 210mm) as seen in the flipper boxplot I have decided to keep them in because I believe they are part of the natural variation rather than being outliers when looked at in comparison to the rest of the Adelie flipper data.</p>
+<p>The Chinstrap data fits normality as its QQ-plots also suggest that the data follows a normal distribution, with some curving at either end of the distribution in the case of the Chinstrap culmen data. This is supported by the p-value of the Shapiro-Wilk test results for culmen and flipper lengths (0.19 and 0.81 respectively). Furthermore the random scattering of residuals on the residuals vs fitted values graph suggests there’s homoscedasticity.</p>
+<p>The Gentoo data shows homoscedasticity with random scattering of residuals. The flipper length data looks roughly normal, with some slight deviations at the tails as seen in the previous species data. The QQ-plot for Gentoo culmen data for most part lies quite well against the line, except for the top tail, which has a deviation. This may be due to the outlier value (59.6mm) as visualised in the Gentoo culmen length boxplot, however, when looked in light of the rest of the culmen data, I believe this value is natural variation rather than an outlier. This may explain the non-significant result of the Shapiro-Wilks test for Gentoo culmen length data - 0.01. The Shapiro-Wilks test for Gentoo flipper data also suggest that it’s not normal, however, the qqplot looks normal and isn’t too disimilar from the other QQ-plots produced, and so I suggest that this non-significant result was due to the high sensitivity of the Shapiro-Wilks test to deviations in normality especially in a large sample size such as this data (119 measured individuals).</p>
+<p>Performing pearson correlation for each species:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adelie pearson coefficient</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>adelie_pearson_coeff <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(adelie_subset_data<span class="sc">$</span>culmen_length_mm, adelie_subset_data<span class="sc">$</span>flipper_length_mm, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Chinstrap pearson coefficient</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>chinstrap_pearson_coeff <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(chinstrap_subset_data<span class="sc">$</span>culmen_length_mm, chinstrap_subset_data<span class="sc">$</span>flipper_length_mm, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gentoo pearson coefficient</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>gentoo_pearson_coeff <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(gentoo_subset_data<span class="sc">$</span>culmen_length_mm, gentoo_subset_data<span class="sc">$</span>flipper_length_mm, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the pearson correlation coefficient for each species</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>adelie_pearson_coeff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  adelie_subset_data$culmen_length_mm and adelie_subset_data$flipper_length_mm
+t = 4.2275, df = 144, p-value = 4.178e-05
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1795153 0.4693861
+sample estimates:
+     cor 
+0.332274 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>chinstrap_pearson_coeff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  chinstrap_subset_data$culmen_length_mm and chinstrap_subset_data$flipper_length_mm
+t = 4.3449, df = 66, p-value = 4.916e-05
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.2627236 0.6382640
+sample estimates:
+      cor 
+0.4716073 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gentoo_pearson_coeff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  gentoo_subset_data$culmen_length_mm and gentoo_subset_data$flipper_length_mm
+t = 9.6107, df = 117, p-value &lt; 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.5499595 0.7540510
+sample estimates:
+      cor 
+0.6642052 </code></pre>
+</div>
+</div>
+<p><strong>Saving the results figure</strong>: Create a text file that saves the output of the statistical tests for all three species.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Title of file</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Tests output"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Adds blank line in text document</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Writes adelie pearson correlation test to text file</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Adelie Pearson correlation test"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">capture.output</span>(adelie_pearson_coeff, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">#blank line</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Adds chinstrap pearson correlation test to text file</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Chinstrap Pearson correlation test"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="fu">capture.output</span>(chinstrap_pearson_coeff, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co">#blank line</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co">#Adds gentoo pearson correlation test to text file</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Gentoo Pearson correlation test"</span>, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="fu">capture.output</span>(gentoo_pearson_coeff, <span class="at">file =</span> <span class="st">"tests.txt"</span>, <span class="at">append =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="results" class="level5">
+<h5 class="anchored" data-anchor-id="results"><strong>Results</strong></h5>
+<p>In all three species there is a statistically significant relationship between culmen length and flipper length.</p>
+<p>In <strong>Adelie</strong> penguins there’s a correlation coefficient of <strong>0.33</strong>, so there’s a moderately positive correlation between culmen and flipper lengths with a p value of <strong>4.18x10<sup>-5</sup></strong> which is smaller than the significance value of 0.05, so we can reject the null hypothesis. Thus there’s a <strong>statistically significant</strong> relationship between culmen and flipper lengths for Adelie penguins. This is supported by the confidence interval which is <strong>0.18 – 0.47</strong>, and as it doesn’t include 0 this supports the significance of our correlation coefficient.</p>
+<p>In <strong>Chinstrap</strong> penguins there’s a correlation coefficient of <strong>0.47</strong> so a moderate to strong positive correlation between culmen and flipper lengths with a p value of <strong>4.92x10<sup>-5</sup></strong> which is smaller than the significance value of 0.05, so we can reject the null hypothesis. Thus there’s a <strong>statistically significant</strong> relationship between culmen and flipper lengths for Chinstrap penguins. This is supported by the confidence interval which is <strong>0.26 – 0.64</strong>, and as it doesn’t include 0 this supports the significance of our correlation coefficient.</p>
+<p>In <strong>Gentoo</strong> penguins there’s a correlation coefficient of <strong>0.66</strong> so a strong positive correlation between culmen and flipper lengths with a p value of <strong>2.2x10<sup>-16</sup></strong> which is smaller than the significance value of 0.05, so we can reject the null hypothesis. Thus there’s a <strong>statistically significant</strong> relationship between culmen and flipper lengths for Gentoo penguins. This is supported by the confidence interval which is <strong>0.55 – 0.75</strong>, and as it doesn’t include 0 this supports the significance of our correlation coefficient.</p>
+</section>
+<section id="discussion" class="level5">
+<h5 class="anchored" data-anchor-id="discussion"><strong>Discussion</strong></h5>
+<p>I find that there is a statistically significant relationship between culmen length and flipper length for all three species investigated (Adelie, Chinstrap, Gentoo). This suggests that these two anatomical features are coupled, and that there’s a favourable range of length values that one of these features can take given the length of the other feature. This could potentially be because of adaptations to the environment and for swimming, catching and eating specific prey items – in this scenario there’s potential for convergent evolution towards this state due to similar selection pressures.</p>
+<p>Alternatively, these two features could be evolutionary coupled in the last common ancestor of all three species, and this coupling remained advantageous for all three penguin species, because they live in same region and so all three species potentially face the same or similar selection pressures and so the coupling of these two morphological features remained.</p>
+<p>To expand of this work, it would be interesting to assess the relationship between culmen length and flipper length at other life stages such as juvenile. The data set only consists of adult individuals and so we can not extrapolate this relationship to chicks and juveniles. There may be less of a relationship between culmen length and flipper length during young life stages because they don’t face the same selection pressures as they don’t actively swim and catch fish, but rather rely on their parents for food.</p>
+<p>Furthermore, this study looks at three species in the same region, which could potentially explain why all species have a significant relationship between culmen and flipper lengths if these traits are determined in part by environmental selection pressures. But further work, could be see if this relationship is seen in these three species in other regions, to see if this relationship isn’t specific to the conditions of the region. And, more broadly, work into what the cause of this relationship between flipper and culmen lengths could yield insight into the evolution of the culmen and flippers.</p>
+</section>
+</section>
+<section id="conclusion" class="level4">
+<h4 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong>:</h4>
+<p>Overall, I found that there’s a statistically significant relationship between culmen length and flipper length for three penguin species – Adelie, Chinstrap, Gentoo. This could be due to the same/similar evolutionary selection pressures acting upon these two traits that means that it is advantageous for culmen lengths to take a certain range of values given the length of the flipper due to advantages this gives in regards to swimming and catching/eating prey. However, the cause of this relationship remains unknown from this analysis alone, and more work could look into whether this relationship remains statistically significant during other life stages and in populations from other regions.</p>
+</section>
+</section>
+<section id="question-3-open-science" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-open-science">Question 3: Open science</h2>
+<section id="q3a-upload-rproject-to-github." class="level4">
+<h4 class="anchored" data-anchor-id="q3a-upload-rproject-to-github.">Q3a: Upload RProject to GitHub.</h4>
+<p>My GitHub link:</p>
+</section>
+<section id="q3b-share-repo-with-partner-and-run-their-data-pipeline" class="level4">
+<h4 class="anchored" data-anchor-id="q3b-share-repo-with-partner-and-run-their-data-pipeline">Q3b: Share repo with partner and run their data pipeline</h4>
+<p>Partner’s GitHub link:</p>
+</section>
+<section id="q3c-my-experience-running-their-code." class="level4">
+<h4 class="anchored" data-anchor-id="q3c-my-experience-running-their-code.">Q3c: My experience running their code.</h4>
+</section>
+<section id="q3d-reflection-on-my-own-code" class="level4">
+<h4 class="anchored" data-anchor-id="q3d-reflection-on-my-own-code">Q3d: Reflection on my own code</h4>
+</section>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">Bibliography</h2>
+<p>Bock, T. (2018, September 21). What is Overplotting? Displayr. https://www.displayr.com/what-is-overplotting/</p>
+<p>Carron, J. (2021, December 13). Violin plots 101: Visualizing distribution and probability density | mode. Mode.com. https://mode.com/blog/violin-plot-examples</p>
+<p>Wicklin, R. (2011, July 6). To jitter or not to jitter: That is the question. The DO Loop. https://blogs.sas.com/content/iml/2011/07/06/to-jitter-or-not-to-jitter-that-is-the-question.html</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
