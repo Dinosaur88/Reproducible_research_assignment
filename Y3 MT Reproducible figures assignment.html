@@ -402,14 +402,23 @@ sample estimates:
 <h2 class="anchored" data-anchor-id="question-3-open-science">Question 3: Open science</h2>
 <section id="q3a-upload-rproject-to-github." class="level4">
 <h4 class="anchored" data-anchor-id="q3a-upload-rproject-to-github.">Q3a: Upload RProject to GitHub.</h4>
-<p>My GitHub link:</p>
+<p>My GitHub link: https://github.com/Dinosaur88/Reproducible_research_assignment.git</p>
 </section>
 <section id="q3b-share-repo-with-partner-and-run-their-data-pipeline" class="level4">
 <h4 class="anchored" data-anchor-id="q3b-share-repo-with-partner-and-run-their-data-pipeline">Q3b: Share repo with partner and run their data pipeline</h4>
-<p>Partner’s GitHub link:</p>
+<p>Partner’s GitHub link: I paired up with 2 other people. So I had access to two other people’s code:</p>
+<p>The person whose code I reviewed: https://github.com/giraffe145/PenguinAssignment.git</p>
+<p>The person who reviewed my code: https://github.com/biologystudentpenguins/reproducible_figures_assessment.git</p>
 </section>
 <section id="q3c-my-experience-running-their-code." class="level4">
 <h4 class="anchored" data-anchor-id="q3c-my-experience-running-their-code.">Q3c: My experience running their code.</h4>
+<p>One of the features of understandable code is using clear names for variables that are meaningful. This code did this fairly well, although there were bits that could’ve been improved like when creating the exploratory scatterplots they named them as ‘plot1’ and ‘plot2’. This could have a more meaningful name related to what these plots show – flipper / culmen lengths against body mass.</p>
+<p>Secondly, the generally clearly structure of the pipeline is good with clear steps like data cleaning, visualisation, statistics. This was helped by the use of comments within the code chunks using ‘#’. These provided descriptions of the different steps whilst running the code. Another helpful feature was the use of invisible() which hides the output of certain code like summary(penguins_raw) which don’t need to be seen in the rendered document, and would disrupt its readability.</p>
+<p>Thirdly, when they created functions such as in the cleaning data code chunk, they use comments to specifically say what each line of the function does and in the function R file they also explicitly state what each function that they’ve then piped together in the Rmd file using %&gt;% does and using functions helps keep the code concise and readable.</p>
+<p>Element that helped made their code reproducible were saving their figures in a separate file and creating and using flexible functions and using flexible file pathways rather than explicitly stating the file pathway such as ‘getwd()’ and ‘setwd()’. This makes the code more reproducible and allows other people to repeat the code as well as allow this person to repeat their own code on a different machine/device.</p>
+<p>A minor point, to make the code more concise, the person could remove the code that produces some redundant figures, such as in the code chunk that creates the exploratory figures (the scatterplots of flipper length, culmen length for all three species) plots the two figures separately and then in a 1x2 figure panel. The code can be edited to just plot the panel. Another element that could be improved to make it more understandable is create titles for the plots that inform us what the plot shows.</p>
+<p>Something that didn’t run was the first chunk of the data pipeline, in particular the renv::restore() didn’t work correctly and there was an error installing the ‘lattice’ package. To get around this, I modified the code so as to manually upload the packages using library(). This means that the code becomes less reproducible because library() uploads the most up to date version of a package, whilst renv::restore() would upload the exact version of a package used by the original author, allowing the code to be re-run in the future with less chances of errors if packages change.</p>
+<p>I didn’t need to alter any code but if I did, I feel like it would be relatively easy because of the use of flexible functions, the clear structure of the pipeline and the use of ‘#’ comments that inform me what occurs at every stage.</p>
 </section>
 <section id="q3d-reflection-on-my-own-code" class="level4">
 <h4 class="anchored" data-anchor-id="q3d-reflection-on-my-own-code">Q3d: Reflection on my own code</h4>

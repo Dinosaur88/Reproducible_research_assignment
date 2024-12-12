@@ -368,19 +368,68 @@ Overall, I found that there’s a statistically significant relationship between
 
 ## Question 3: Open science
 
-
-
 #### Q3a: Upload RProject to GitHub.
 
-My GitHub link:
+My GitHub link: https://github.com/Dinosaur88/Reproducible_research_assignment.git
 
 #### Q3b: Share repo with partner and run their data pipeline
 
-Partner's GitHub link:
+Partner's GitHub link: I paired up with 2 other people. So I had access to two other people's code:
+
+The person whose code I reviewed: https://github.com/giraffe145/PenguinAssignment.git
+
+The person who reviewed my code: https://github.com/biologystudentpenguins/reproducible_figures_assessment.git
 
 #### Q3c: My experience running their code.
 
+**What elements of your partner’s code helped you understand their pipeline?**
+
+One of the features of understandable code is using clear names for variables that are meaningful. This code did this fairly well, although there were bits that could’ve been improved like when creating the exploratory scatterplots they named them as ‘plot1’ and ‘plot2’. This could have a more meaningful name related to what these plots show – flipper / culmen lengths against body mass.
+
+Secondly, the generally clearly structure of the pipeline is good with clear steps like data cleaning, visualisation, statistics. This was helped by the use of comments within the code chunks using ‘#’. These provided descriptions of the different steps whilst running the code. Another helpful feature was the use of invisible() which hides the output of certain code like summary(penguins_raw) which don’t need to be seen in the rendered document, and would disrupt its readability.
+
+Thirdly, when they created functions such as in the cleaning data code chunk, they use comments to specifically say what each line of the function does and in the function R file they also explicitly state what each function that they’ve then piped together in the Rmd file using %\>% does and using functions helps keep the code concise and readable.
+
+Element that helped made their code reproducible were saving their figures in a separate file and creating and using flexible functions and using flexible file pathways rather than explicitly stating the file pathway such as ‘getwd()’ and ‘setwd()’. This makes the code more reproducible and allows other people to repeat the code as well as allow this person to repeat their own code on a different machine/device.
+
+**Did the code run, did I need to fix anything?**
+
+The code ran without any error, but to run it, I did I have to modify the code slightly by installing all the libraries manually rather than using renv::Restore as there was an error when running this, as detailed below.
+
+**What suggestions would you make to improve their code?**
+
+A minor point, to make the code more concise, the person could remove the code that produces some redundant figures, such as in the code chunk that creates the exploratory figures (the scatterplots of flipper length, culmen length for all three species) plots the two figures separately and then in a 1x2 figure panel. The code can be edited to just plot the panel.
+
+Something that didn’t run was the first chunk of the data pipeline, in particular the renv::restore() didn’t work correctly and there was an error installing the ‘lattice’ package. To get around this, I modified the code so as to manually upload the packages using library(). This means that the code becomes less reproducible because library() uploads the most up to date version of a package, whilst renv::restore() would upload the exact version of a package used by the original author, allowing the code to be re-run in the future with less chances of errors if packages change.
+
+Another minor suggestion is that the statistics code chunk looks a bit cluttered and some of the comments such as if the data violates the assumptions or not should be put as normal text outside the code chunk because otherwise it breaks the flow of the code chunk and makes it harder to read. More generally, I personally think using more indentation more would help the readability of the code from a visual standpoint, but again a minor point.
+
+**If you needed to change partner’s figure using their code, do you think it would be easy or difficult?**
+
+If I needed to alter my partner’s figure with their code, I feel like it would be relatively easy because of the use of flexible functions such as the plot_scatter and plot_ancova_results functions in Plotting.R, however the latter function is only useful if you use an ANCOVA for your variables of interest. Moreover, the clear structure of the pipeline and the use of ‘#’ comments inform me what occurs at every stage makes it easy to change the code for a figure.
+
 #### Q3d: Reflection on my own code
+
+They suggested the following improvements:
+
+1)  Libraries should be uploaded automatically when running the code
+2)  Figures could have been saved as an svg
+3)  Make the plot_scatterplot function more flexible
+4)  Change code structure in some chunks (testing assumptions of Pearson Correlation code chunk) and add more comments
+
+I agree with the 1). By uploading libraries using the renv() function rather than doing it manually this allows other users to use the same versions of the packages that I used and allows for reproducibility. Although I had a renv file with my packages, I should have written renv::restore() in my code.
+
+I also agree with 2). As svg files are generally more reproducible and can easily be used for different purposes e.g scientific posters, presentations as they’re resolution independent.
+
+I agree with 3) where my partner suggests that I make the function more flexible to plot different categorical variables on the X axis. As this allows people who are using my code and data to look at other categorical variables of interest to them
+
+In terms of 4), I partially agree. I agree that I could add more comments to more explicitely state what each step of my code is doing, in particular in the functions files in the functions folder to tell the other person what each line in my functions do. I don’t necessarily agree with the comment about breaking down my code chunk on testing the assumptions of the pearson correlation, as although that code chunk is long, I wanted the plots and text output to be all together rather than split in the rendered document.
+
+**What did I learn about writing code for other people?**
+
+I learnt the need to keep in mind that other people will view your code for the first time and so the importance of keeping code and files and folders organised with a clear structure which ensures that the code is readable and easily understood by other people. To create code for other people, it’s important to document your steps and provide a good level of information regarding your code. This is done by ensuring that variables have meaningful rather than ambiguous names and that there’s sufficient level of detail in terms of comments that provides the reader with information of what the lines of code do.
+
+As well as providing a certain level of description that makes your code useful to others, the code itself should be kept flexible so others can run it on their own devices by using features such as flexible functions and flexible file pathways, this also allows people to adapt your code for their own purposes.
 
 ## Bibliography
 
