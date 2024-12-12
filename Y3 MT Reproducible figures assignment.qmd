@@ -1,7 +1,9 @@
 ---
 title: "Y3 Reproducible figures assignment"
-format: html
 editor: visual
+format:
+  html:
+    embed-resources: true
 ---
 
 ## Question 1: Data visualisation for science communication
